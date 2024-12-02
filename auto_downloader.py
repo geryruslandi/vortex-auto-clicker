@@ -7,10 +7,6 @@ import traceback
 print(os.getcwd())
 
 pyautogui.FAILSAFE = False
-
-# Image file paths
-launcher_download_path = "./images/download_launcher.PNG"
-website_download_path = "./images/download_website.PNG"
 threshold = 0.9
 
 def clickOnImage(location: str, screenshot) -> bool:
@@ -34,6 +30,8 @@ def isCyberpunkGame(screenshot) -> bool:
     return False
 
 def checkOnCommonButtons(screenshot) -> bool:
+  launcher_download_path = "./images/download_launcher.PNG"
+  website_download_path = "./images/download_website.PNG"
   if clickOnImage(launcher_download_path, screenshot):
     print("Clicked on 'Launcher Download'")
     return True
