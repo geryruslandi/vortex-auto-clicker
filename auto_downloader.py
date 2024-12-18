@@ -3,13 +3,14 @@ import pyautogui
 import time
 from pyscreeze import ImageGrab
 import traceback
+import datetime
 
 print(os.getcwd())
 
 pyautogui.FAILSAFE = False
 threshold = 0.9
 
-def clickOnImage(location: str, screenshot) -> bool:
+def clickOnImage(location: str, screenshot, debug = False) -> bool:
     try:
         ui_location = pyautogui.locate(location, screenshot, confidence=threshold)
         print(ui_location)
@@ -18,6 +19,8 @@ def clickOnImage(location: str, screenshot) -> bool:
             return True
         return False
     except Exception as e:
+        if debug:
+          traceback.print_exc()
         return False
 
 def isCyberpunkGame(screenshot) -> bool:
@@ -63,7 +66,6 @@ while True:
 
         if checkOnCommonButtons(screenshot):
           time.sleep(2)
-          break
 
         if isCyberpunkGame(screenshot):
           checkOnCyberpunkButtons(screenshot);

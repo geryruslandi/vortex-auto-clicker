@@ -1,8 +1,13 @@
-Just run this script to automatically click download buttons.
+# Readme
 
-You might need to change the threshold up or down. Also sometimes pictures need to be replaced.
+Make sure you installed all of the dependencies listed below:
 
-Install Dependencies:
+- `pip install pyautoguy`
+- `pip install pillow`
+- `pip install opencv-python`
 
-- pyautogui `pip install pyautoguy`
-- pillow `pip install pillow`
+Then after that run auto_downloader.py by using:
+
+`python auto_downloader.py`
+
+> You might need to change the threshold up or down. Also sometimes pictures need to be replaced.
